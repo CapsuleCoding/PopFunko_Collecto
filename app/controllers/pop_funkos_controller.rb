@@ -21,11 +21,11 @@ class PopFunkosController < ApplicationController
     end
 
     def index
-        @@pop_funko = PopFunko.order_by_store
+        @@pop_funko = PopFunko.order_by_location
     end
 
     def show
-        @stores = @pop_funko.stores
+        @stores = @pop_funko.locations
     end
 
     def edit
@@ -52,9 +52,13 @@ class PopFunkosController < ApplicationController
     private
 
     def pop_funko_params
-        params.require(:pop_funko).permit(:name, :price, :location_id, location_attributes: [:name, :address])
+        params.require(:pop_funko).permit(:name, :price, :category_id, category_attributes: [:name])
     end
 
     def set_pop_funko
         @pop_funko = PopFunko.find_by(id: params[:id])
     end
+
+
+    spsr - caetgory
+    rev - location
