@@ -1,0 +1,18 @@
+<br>
+<center>
+<header class='clearfix'>
+  <% if session[:user_id] %>
+  <hr>
+    <ul>
+    <%= link_to 'Logout', logout_path, :method => :delete %> |
+    <%= link_to "New PopFunko", new_pop_funko_path %> |
+    <%= link_to "All PopFunkos", pop_funkos_path %> |
+    <%= link_to "New Locations", new_location_path %> |
+    <%= link_to "All Locations", locations_path %> |
+    <%= link_to "All Categories", categories_path %> |
+    </ul>
+  </div> 
+  <hr>
+  <% end %>
+</header>
+</center>
