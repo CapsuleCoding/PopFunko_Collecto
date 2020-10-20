@@ -1,1 +1,26 @@
-<div class=>
+
+<div class="jumbotron vertical-center">
+<div class="container">
+<% if @pop_funko %>
+<h1>Locations for <%= @pop_funko.name%> - <%= @pop_funko.name_of_category%></h1>
+<% else %>
+<h1>All the Locations </h1>
+<% end %>
+
+     <ul>
+
+     <% @locations.each do |r| %>
+     <li >
+     <h2><%= r.pop_funko.name %></h2>
+     <p> Select the category for this Pop Funko? <br> <%= r.category.humanize%><p>
+     <p>Address where you bought the Pop Funko: <br> <%= r.address %></p>
+     <p> Created-at <%= r.created_at %></p>
+     <hr>
+    </li>
+      <% end %>
+    </ul>
+   
+
+ </div>
+ </div>
+ </div>
