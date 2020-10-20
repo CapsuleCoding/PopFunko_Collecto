@@ -5,7 +5,7 @@ class PopFunk < ApplicationRecord
     has_many :users, through: :locations
     accepts_nested_attributes_for :category
 
-    validates :name, presenc: true
+    validates :name, presence: true
     validates :price, presence: true
     validates :already_exist
 
@@ -22,7 +22,7 @@ class PopFunk < ApplicationRecord
     end
 
     def name_of_location
-        "#{name} - #{sponsor.name}"
+        "#{name} - #{category.name}"
     end
     
 
