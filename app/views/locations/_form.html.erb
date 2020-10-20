@@ -1,0 +1,45 @@
+
+<div class="jumbotron vertical-center">
+<div class="container">
+<% if params[:pop_funko_id] %>
+
+<h1>Add A Location for <%= @location.pop_funko.name %> - <%= @location.pop_funko.category.name %> </h1>
+
+<%else%>
+
+<h1>Add Location </h1>
+<br>
+<%end%>
+
+<%= form_for(@location) do |f|%>
+    <% if params[:pop_funko_id] %>
+    <%= f.hidden_field :pop_funko_id %>
+  
+    <% else %>
+
+      <div>
+        <%= f.label :pop_funko_id, "Select The PopFunko" %>
+        <%= f.collection_select :pop_funko_id, PopFunko.all, :id, :name_of_category,  include_blank: true %>
+      </div>
+
+   <% end %>
+ 
+    <br>
+    <div>
+      <%= f.label :bought %>
+  
+      <%= f.select :bought, [["Yes", true], ["No", false]], :include_blank => true %>
+    </div>
+    <br>
+    <div>
+      <%= f.label :address %>
+      <%= f.text_area :address, size: "25X5" %>
+    </div>
+    <br>
+
+
+    <%= f.submit %>
+
+  <% end %>
+</div>
+</div>
