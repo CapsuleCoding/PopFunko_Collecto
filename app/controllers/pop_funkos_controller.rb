@@ -58,7 +58,4 @@ class PopFunkosController < ApplicationController
     def set_pop_funko
         @pop_funko = PopFunko.find_by(id: params[:id])
     end
-
-
-    spsr - caetgory
-    rev - location
+end
