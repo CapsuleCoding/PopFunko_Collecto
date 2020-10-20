@@ -1,0 +1,44 @@
+<center><p> <%= flash[:notice] if flash %></p></center>
+<div class="jumbotron vertical-center">
+<div class="container">
+  <h1 class="display-4">- All Pop Funkos- </h1>
+  <p class="lead">
+
+
+
+
+\ <%= link_to "Add a New Pop Funko", {:action => 'new' }%> \ 
+
+
+   <hr>
+
+      <% @pop_funkos.each do |c| %>
+   <h2>Name: </h2><%= c.name %>
+      <hr>
+   <h2>Price:</h2>$<%= c.price %> 
+      
+  <hr>
+      <%= link_to "Show Pop Funko", pop_funko_path(c.id) %> 
+   
+
+   <hr>
+      <%= link_to "Edit", edit_pop_funko_path(c.id) %>
+      
+<hr>
+   
+<%= button_to "Delete", pop_funko_path(c), :confirm => "Are you sure?", :method => :delete %>
+
+
+    <hr>
+    <hr>
+   
+    <% end %>
+ 
+<hr>
+
+</div>
+</div>
+   
+      
+
+   
