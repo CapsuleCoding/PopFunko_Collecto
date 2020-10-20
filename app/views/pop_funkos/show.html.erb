@@ -1,0 +1,20 @@
+
+<div class="jumbotron vertical-center">
+<div class="container">
+  <h1 class="display-4"><h1>-<%= @pop_funko.name %>-</h1>
+  <p class="lead">
+
+
+
+   <strong>The Price of the Pop Funko </strong> $<%= @pop_funko.price %><br>
+<br>
+
+<% @locations.all.each do |c| %>
+     <h5>Address - <%= c.address %></h5>
+   <h5> Created-at <%= c.created_at %></h5>
+   <% end %> 
+   <%= link_to  "View Location for this Pop Funko", pop_funko_location_path(@pop_funko) %>
+
+
+</div>
+</div>
