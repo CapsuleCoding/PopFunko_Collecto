@@ -1,2 +1,2 @@
-module Locations
+module LocationsHelper
 end
