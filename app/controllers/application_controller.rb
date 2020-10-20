@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     end
 
     def create_session
-        session[:user_id] = @user.user_id
+        session[:user_id] = @user.id
     end
 
     def current_user
