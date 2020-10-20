@@ -1,4 +1,4 @@
-class Sessions Controller < ApplicationController
+class SessionsController < ApplicationController
 
     def welcome
     end
@@ -13,13 +13,11 @@ class Sessions Controller < ApplicationController
             @user = User.create_by_google_omniauth(auth)
             session[:user_id] = @user_id
             redirect_to user_path(@user)
-
         elsif
             @user = User.find_by(username: params[:user][:username])
-            @user && @user.authenicate(parms[:user][:password])
-            session[:user_id] = @user.user_id
+            @user && @user.authenticate(params[:user][:password])
+            session[:user_id] = @user.id
             redirect_to user_path(@user)
-
         else
             flash[:notice] = "One or more fields incorrect, please try again"
             redirect_to login_path
@@ -29,7 +27,7 @@ class Sessions Controller < ApplicationController
     def destroy
         session.delete(:user_id)
         flash[:notice] = "Successfully Logged Out"
-        redirect_to '/' notice: "Successfully Logged Out"
+        redirect_to '/', notice: "Successfully Logged Out"
     end
 
     def omniauth
