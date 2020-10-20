@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+    
     helper_method :logged_in?
     helper_method :create_session
     helper_method :current_user
@@ -16,6 +17,6 @@ class ApplicationController < ActionController::Base
     end
 
     def current_user
-        session[:user_id
-    end]
+        session[:user_id]
+    end
 end
