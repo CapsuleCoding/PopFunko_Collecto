@@ -2,6 +2,6 @@ class CategoriesController < ApplicationController
     before_action : require_login
 
     def index
-        @categoeies = Category.all
+        @categories = Category.all
     end
 end
