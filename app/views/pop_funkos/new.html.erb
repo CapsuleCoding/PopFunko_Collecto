@@ -1,0 +1,15 @@
+
+<%= render partial: 'layouts/errors', locals: {message: @pop_funk} %>
+
+<div class="jumbotron vertical-center">
+<div class="container">
+  <h1 class="display-4">- Add New Pop Funko - </h1>
+  <p class="lead">
+
+
+<%= render 'form' %>
+<hr>
+<%= link_to  "Cancel", user_path(session[:user_id]) %>
+
+</div>
+</div>
